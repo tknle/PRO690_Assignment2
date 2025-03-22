@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tknleproassignment 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tknleproassignment
+  template:
+    metadata:
+      labels:
+        app: tknleproassignment 
+    spec:
+      containers:
+        - name: tknleproassignment 
+          image: mycontainerregistry.azurecr.io/tknleproassignment
+          ports:
+          - containerPort: 8080
